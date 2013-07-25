@@ -4,21 +4,21 @@ from django.db import models
 # Create your models here.
 class Etudiant(models.Model):
 
-    def upload_portrait(self, filename):
+    def upload(self, input_filename, output_filename):
         ext = filename.split('.')[-1]
-        return 'photos/'+self.email.split('@')[0]+'/portrait.'+ext
+        return 'photos/'+self.email.split('@')[0]+'/'+output_filename+'.'+ext
+
+    def upload_portrait(self, filename):
+        return upload(filename, 'portrait')
 
     def upload_group1(self, filename):
-        ext = filename.split('.')[-1]
-        return 'photos/'+self.email.split('@')[0]+'/group1.'+ext
+        return upload(filename, 'group1')
 
     def upload_group2(self, filename):
-        ext = filename.split('.')[-1]
-        return 'photos/'+self.email.split('@')[0]+'/group2.'+ext
+        return upload(filename, 'group2')
 
     def upload_group3(self, filename):
-        ext = filename.split('.')[-1]
-        return 'photos/'+self.email.split('@')[0]+'/group3.'+ext
+        return upload(filename, 'group3')
 
     DEPARTEMENT_CHOICES = (
         ('INFO', 'INFO'),
