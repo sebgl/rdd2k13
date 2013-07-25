@@ -1,0 +1,27 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<form name="userInfo" action="" method="post" enctype="text/plain">
+	Email: {{email}} <br />
+	Département: 
+	<select name="selectDepartement">
+		<option value="INFO" selected>INFO</option>
+		<option value="SRC">SRC</option>
+		<option value="EII">EII</option>
+		<option value="GMA">GMA</option>
+		<option value="GCU">GCU</option>
+		<option value="SGM">SGM</option>
+	</select><br />
+	Année de départ à l'étranger: <input type="number" maxlength="4" name="anneeEtranger"><br />
+	Destination de départ: <input type="text" maxlength="300" name="destinationEtranger"><br />
+	Rôles associatifs: <textarea rows="4" cols="40" maxlength="300" name="rolesAssociatifs"></textarea><br />
+	Commentaire personnel: <textarea rows="4" cols="40" maxlength="300" name="commentaire"></textarea><br />
+	Photo (portrait): <br />
+	Photos supplémentaires (groupes): <br />
+	<input type="submit" value="Envoyer">
+</form> 
+
+{{meta|safe}}
+
+{% endblock %}
